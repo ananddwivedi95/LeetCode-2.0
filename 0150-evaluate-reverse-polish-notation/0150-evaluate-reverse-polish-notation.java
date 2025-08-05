@@ -4,37 +4,36 @@ class Solution {
         for(int i=0;i<arr.length;i++)
         {
             String str=arr[i];
+
+                   
             if(str.equals("+")||str.equals("-")||
             str.equals("/")||str.equals("*"))
             {
+                  int b=stack.pop();
+                   int a=stack.pop();
+                   int result=0;
+                
                 if(str.equals("+"))
                 {
-                   int b=stack.pop();
-                   int a=stack.pop();
-                   int result=a+b;
-                   stack.push(result);
+                   result=a+b;
+                  
                 }
                 else if(str.equals("-"))
                 {
-                   int b=stack.pop();
-                   int a=stack.pop();
-                   int result=a-b;
-                   stack.push(result);
+                   result=a-b;
+                   
                 }
                 else if(str.equals("/"))
                 {
-                    int b=stack.pop();
-                   int a=stack.pop();
-                   int result=a/b;
-                   stack.push(result);
+                   result=a/b;
+                   
                 }
                 else if(str.equals("*"))
                 {
-                   int b=stack.pop();
-                   int a=stack.pop();
-                   int result=a*b;
-                   stack.push(result);
+                   result=a*b;
+                   
                 }
+                stack.push(result);
             }
             else
             {
